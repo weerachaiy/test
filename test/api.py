@@ -2,7 +2,7 @@ import requests
 import json
 import tabulate
 
-requests.packages.urllib3.disable_warnings()
+#requests.packages.urllib3.disable_warnings()
 
 api_base_url = "https://devnetsbx-netacad-apicem-1.cisco.com/api/v1"
 api_username = "devnetuser"
@@ -88,7 +88,7 @@ def print_flowid(sourceIP, destIP):
     ticket = get_ticket()
     print("Service ticket is",ticket)
     flow = get_flowid(ticket, sourceIP, destIP)
-    headers = {"content-type": "application/json",
-               "X-AUTH-TOKEN": ticket}
+    #headers = {"content-type": "application/json",
+    #           "X-AUTH-TOKEN": ticket}
     api_base_url = "https://devnetsbx-netacad-apicem-2.cisco.com"
     return api_base_url + flow["url"]
